@@ -10,7 +10,7 @@ export const Hero = () => (
         alt="Modern luxury architecture at golden hour"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-secondary/60 to-secondary/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-secondary/70 to-secondary/95" />
     </div>
 
     <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 pb-20 md:pb-28">

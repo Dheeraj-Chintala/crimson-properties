@@ -40,8 +40,8 @@ const ConsultantCard = () => (
         <MapPin className="w-3.5 h-3.5" />
         <span>{AGENT.location}</span>
       </div>
-      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 mt-2">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary mt-2">
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         Available Now
       </span>
     </div>
