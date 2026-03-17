@@ -40,8 +40,8 @@ const ConsultantCard = () => (
         <MapPin className="w-3.5 h-3.5" />
         <span>{AGENT.location}</span>
       </div>
-      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 mt-2">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary mt-2">
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         Available Now
       </span>
     </div>
@@ -61,7 +61,7 @@ const ConsultantCard = () => (
           <Mail className="w-4 h-4" /> Send Email
         </a>
       </Button>
-      <Button asChild className="w-full gap-2 rounded-xl h-11 bg-[#25D366] hover:bg-[#1ebe57] text-white border-0">
+      <Button asChild className="w-full gap-2 rounded-xl h-11 bg-[#25D366] hover:bg-[#1ebe57] text-primary-foreground border-0">
         <a href={`https://wa.me/${AGENT.phone}?text=${whatsappMsg}`} target="_blank" rel="noopener noreferrer">
           <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
         </a>
