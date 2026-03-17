@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -18,15 +19,17 @@ const InfinityLogo = () => (
       strokeWidth="1.5"
       className="text-primary"
     />
-    <rect x="16" y="2" width="6" height="16" rx="1" stroke="currentColor" strokeWidth="1" className="text-foreground" opacity="0.6" />
-    <rect x="24" y="6" width="6" height="12" rx="1" stroke="currentColor" strokeWidth="1" className="text-foreground" opacity="0.4" />
-    <rect x="32" y="4" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1" className="text-foreground" opacity="0.3" />
+    <rect x="16" y="2" width="6" height="16" rx="1" stroke="currentColor" strokeWidth="1" className="text-secondary" opacity="0.6" />
+    <rect x="24" y="6" width="6" height="12" rx="1" stroke="currentColor" strokeWidth="1" className="text-secondary" opacity="0.4" />
+    <rect x="32" y="4" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1" className="text-secondary" opacity="0.3" />
   </svg>
 );
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -36,6 +39,10 @@ export const Navbar = () => {
 
   const scrollTo = (href: string) => {
     setMobileOpen(false);
+    if (!isHome && href.startsWith("#")) {
+      window.location.href = "/" + href;
+      return;
+    }
     const el = document.querySelector(href);
     el?.scrollIntoView({ behavior: "smooth" });
   };
@@ -47,7 +54,7 @@ export const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-expo ${
-          scrolled ? "bg-background/90 backdrop-blur-xl border-b border-border" : "bg-transparent"
+          scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
@@ -68,9 +75,15 @@ export const Navbar = () => {
                 {link.label}
               </button>
             ))}
+            <Link
+              to="/contact"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Contact
+            </Link>
             <button
               onClick={() => scrollTo("#cta")}
-              className="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-sm transition-all duration-300 hover:brightness-110 active:scale-95"
+              className="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-lg transition-all duration-300 hover:brightness-110 active:scale-95 shadow-md shadow-primary/20"
             >
               Get Started
             </button>
@@ -99,14 +112,21 @@ export const Navbar = () => {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="text-2xl font-display font-bold text-foreground text-left"
+                  className="text-2xl font-display font-semibold text-foreground text-left"
                 >
                   {link.label}
                 </button>
               ))}
+              <Link
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="text-2xl font-display font-semibold text-foreground text-left"
+              >
+                Contact
+              </Link>
               <button
                 onClick={() => scrollTo("#cta")}
-                className="mt-4 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-sm text-lg"
+                className="mt-4 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg text-lg shadow-md shadow-primary/20"
               >
                 Get Started
               </button>

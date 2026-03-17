@@ -7,13 +7,13 @@ const values = [
   { icon: Lightbulb, title: "Innovation", desc: "Pioneering data-driven strategies for next-generation real estate." },
 ];
 
-const ease = [0.16, 1, 0.3, 1] as const;
+const cubicEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: ease as unknown as [number, number, number, number] },
+    transition: { delay: i * 0.15, duration: 0.6, ease: cubicEase },
   }),
 };
 
@@ -29,7 +29,7 @@ export const About = () => (
         <motion.p variants={fadeUp} custom={0} className="text-primary font-mono text-xs tracking-widest uppercase mb-4">
           About Us
         </motion.p>
-        <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6">
+        <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-semibold tracking-tight mb-6 text-foreground">
           The Future of Asset Acquisition
         </motion.h2>
         <motion.p variants={fadeUp} custom={2} className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -59,13 +59,13 @@ export const About = () => (
             key={v.title}
             variants={fadeUp}
             custom={i + 1}
-            className="glass-card rounded-lg p-6 flex gap-5 items-start"
+            className="glass-card rounded-xl p-6 flex gap-5 items-start"
           >
-            <div className="h-12 w-12 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
               <v.icon size={22} className="text-primary" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-lg mb-1">{v.title}</h3>
+              <h3 className="font-display font-semibold text-lg mb-1 text-foreground">{v.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
             </div>
           </motion.div>

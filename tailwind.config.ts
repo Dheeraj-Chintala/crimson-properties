@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Poppins"', 'system-ui', 'sans-serif'],
+        body: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {

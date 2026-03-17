@@ -44,7 +44,7 @@ export const FeaturedProperties = () => (
       <motion.p variants={fadeUp} custom={0} className="text-primary font-mono text-xs tracking-widest uppercase mb-4">
         Portfolio
       </motion.p>
-      <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-12">
+      <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-semibold tracking-tight mb-12 text-foreground">
         Featured Properties
       </motion.h2>
 
@@ -56,7 +56,7 @@ export const FeaturedProperties = () => (
             custom={i + 2}
             whileHover={{ y: -8 }}
             transition={{ duration: 0.4, ease: cubicEase }}
-            className="group relative overflow-hidden rounded-lg bg-card border border-border"
+            className="group relative overflow-hidden rounded-xl bg-card border border-border shadow-sm hover:shadow-lg transition-shadow duration-500"
           >
             <div className="aspect-[4/5] overflow-hidden">
               <img
@@ -65,7 +65,7 @@ export const FeaturedProperties = () => (
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/30 to-transparent" />
             </div>
             <div className="absolute bottom-0 p-6 w-full">
               <div className="flex justify-between items-end">
@@ -73,14 +73,14 @@ export const FeaturedProperties = () => (
                   <p className="text-primary font-mono text-sm mb-1 tracking-widest uppercase">
                     {p.price}
                   </p>
-                  <h3 className="text-xl font-display font-bold tracking-tight text-foreground">{p.title}</h3>
-                  <div className="flex items-center gap-1 text-muted-foreground mt-1 text-sm">
+                  <h3 className="text-xl font-display font-semibold tracking-tight text-white">{p.title}</h3>
+                  <div className="flex items-center gap-1 text-white/60 mt-1 text-sm">
                     <MapPin size={14} />
                     <span>{p.location}</span>
                   </div>
-                  <p className="text-muted-foreground text-xs mt-2 leading-relaxed max-w-[220px]">{p.desc}</p>
+                  <p className="text-white/50 text-xs mt-2 leading-relaxed max-w-[220px]">{p.desc}</p>
                 </div>
-                <button className="h-12 w-12 rounded-full glass-card flex items-center justify-center text-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground flex-shrink-0">
+                <button className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-colors duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary flex-shrink-0">
                   <ArrowUpRight size={20} />
                 </button>
               </div>

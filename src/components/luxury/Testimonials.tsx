@@ -27,10 +27,10 @@ export const Testimonials = () => {
   const t = testimonials[idx];
 
   return (
-    <section id="testimonials" className="section-padding bg-card/50">
+    <section id="testimonials" className="section-padding bg-muted/50">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-primary font-mono text-xs tracking-widest uppercase mb-4">Testimonials</p>
-        <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16">
+        <h2 className="text-4xl md:text-5xl font-display font-semibold tracking-tight mb-16 text-foreground">
           Client Voices
         </h2>
 
@@ -42,14 +42,14 @@ export const Testimonials = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="glass-card rounded-lg p-10 md:p-14"
+              className="glass-card rounded-xl p-10 md:p-14"
             >
               <Quote size={32} className="text-primary/30 mb-6 mx-auto" />
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-8 italic">
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-8 italic">
                 "{t.text}"
               </p>
               <div>
-                <p className="font-display font-bold text-lg">{t.name}</p>
+                <p className="font-display font-semibold text-lg text-foreground">{t.name}</p>
                 <p className="text-muted-foreground text-sm">{t.role}</p>
               </div>
             </motion.div>
