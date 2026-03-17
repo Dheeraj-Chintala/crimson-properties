@@ -24,7 +24,7 @@ export const Services = () => (
       <motion.p variants={fadeUp} custom={0} className="text-primary font-mono text-xs tracking-widest uppercase mb-4">
         Services
       </motion.p>
-      <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-12">
+      <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl font-display font-semibold tracking-tight mb-12 text-foreground">
         What We Deliver
       </motion.h2>
 
@@ -34,14 +34,14 @@ export const Services = () => (
             key={s.title}
             variants={fadeUp}
             custom={i + 2}
-            className="glass-card rounded-lg p-8 group hover:border-primary/20 transition-all duration-500"
+            className="glass-card rounded-xl p-8 group hover:border-primary/20 transition-all duration-500 hover:shadow-md"
           >
             <div className="flex items-start gap-5">
-              <div className="h-14 w-14 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-500">
+              <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors duration-500">
                 <s.icon size={26} className="text-primary" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl mb-2">{s.title}</h3>
+                <h3 className="font-display font-semibold text-xl mb-2 text-foreground">{s.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             </div>
