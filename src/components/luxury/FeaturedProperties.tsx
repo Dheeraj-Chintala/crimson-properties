@@ -28,11 +28,13 @@ const properties = [
   },
 ];
 
+const cubicEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: i * 0.15, duration: 0.6, ease: cubicEase },
   }),
 };
 
@@ -53,7 +55,7 @@ export const FeaturedProperties = () => (
             variants={fadeUp}
             custom={i + 2}
             whileHover={{ y: -8 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: cubicEase }}
             className="group relative overflow-hidden rounded-lg bg-card border border-border"
           >
             <div className="aspect-[4/5] overflow-hidden">

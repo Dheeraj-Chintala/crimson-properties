@@ -7,11 +7,13 @@ const values = [
   { icon: Lightbulb, title: "Innovation", desc: "Pioneering data-driven strategies for next-generation real estate." },
 ];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: i * 0.15, duration: 0.6, ease: ease as unknown as [number, number, number, number] },
   }),
 };
 

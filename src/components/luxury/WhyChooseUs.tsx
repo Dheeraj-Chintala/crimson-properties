@@ -8,11 +8,13 @@ const points = [
   { icon: MapPinned, title: "Premium Locations", desc: "Access to off-market properties in the world's most coveted addresses." },
 ];
 
+const cubicEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: i * 0.12, duration: 0.6, ease: cubicEase },
   }),
 };
 
