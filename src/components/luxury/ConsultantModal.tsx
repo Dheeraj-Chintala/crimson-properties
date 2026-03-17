@@ -61,7 +61,7 @@ const ConsultantCard = () => (
           <Mail className="w-4 h-4" /> Send Email
         </a>
       </Button>
-      <Button asChild className="w-full gap-2 rounded-xl h-11 bg-[#25D366] hover:bg-[#1ebe57] text-white border-0">
+      <Button asChild className="w-full gap-2 rounded-xl h-11 bg-[#25D366] hover:bg-[#1ebe57] text-primary-foreground border-0">
         <a href={`https://wa.me/${AGENT.phone}?text=${whatsappMsg}`} target="_blank" rel="noopener noreferrer">
           <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
         </a>
